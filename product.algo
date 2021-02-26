@@ -1,0 +1,34 @@
+
+//
+PROCEDURE dot_product(u,v: ARRAY_OF FLOAT[],int n)
+VAR
+    ps:FLOAT;
+    i:INTEGER;
+BEGIN
+ ps:=0;
+  FOR i FROM 0 TO n-1 STEP 1  DO
+      ps:=ps+u[i]*v[i];
+  END_FOR
+ write(ps);
+END     
+
+ALGORITHM n_vecteur
+VAR
+   vectors : ARRAY_OF FLOAT[4][2];
+   vectors:= [[2,3],[4,5],[7,9],[4,4]];
+   i,j:INTEGER;
+
+BEGIN
+read (vectors);
+IF ((vectors.length)%2 = 0) THEN
+
+      FOR i FROM 0 TO vectors.length-1 STEP 1  DO
+        FOR j FROM i+1 TO vectors.length-1  STEP 1  DO
+            dot_product(vectors[i],vectors[j], int vectors[i].length)
+            IF (ps=0) THEN
+                write( vectors[i] 'and' vectors[j] are orthogonal)
+            END_IF
+        END_FOR
+      END_FOR
+   END_IF
+END
